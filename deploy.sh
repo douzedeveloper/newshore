@@ -13,7 +13,7 @@ git init
 git add -A
 git commit -m 'deploy'
 
-# if you are deploying to https://<douzedeveloper>.github.io/<REPO>
+# if you are deploying to https://<douzedeveloper>.github.io/<newshore>
 git push -f git@github.com:<douzedeveloper>/<newshore>.git master:gh-pages
 
 cd -
