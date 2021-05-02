@@ -20,7 +20,7 @@ export default class App extends Vue {}
 
 <style lang="scss">
 @import "@/scss/main.scss";
-@import url("http://fonts.cdnfonts.com/css/harry-potter");
+@import url("https://fonts.cdnfonts.com/css/harry-potter");
 html,
 body {
   overflow: auto;
