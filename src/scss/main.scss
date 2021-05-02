@@ -1,0 +1,16 @@
+// Abstracts
+@import "./abstracts/mixins";
+
+// Layout
+@import "./layout/page";
+
+:root {
+  --animate-duration: 240ms;
+}
+
+.v-overlay--active .v-overlay__scrim,
+.dialog-backdrop {
+  opacity: 0.9 !important;
+  backdrop-filter: blur(12px) !important;
+  background-color: get-color("dark", 0.6) !important;
+}
