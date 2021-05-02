@@ -13,7 +13,13 @@ import "vue-toast-notification/dist/theme-sugar.css";
 Vue.config.productionTip = false;
 Vue.use(VueToast);
 Vue.use(VueAxios, axios);
-Vue.use(Api);
+Vue.use(Api, {
+  url: process.env.VUE_APP_HEROKUAPP,
+  onError: () => {
+    const message = "Request Error";
+    Vue.$toast.error(message, { message, position: "top-right" });
+  },
+});
 
 Vue.use(Dialog, {
   plugins: {
