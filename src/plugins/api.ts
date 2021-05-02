@@ -14,16 +14,16 @@ export class ApiError extends Error {
 
 export class Api {
   constructor(
+    private url: string = "",
     private onError: (e: ApiError) => void | Promise<void> = console.error
   ) {}
 
   async get(params: any) {
-    const url = "http://hp-api.herokuapp.com/api/characters/house/";
-    return await this.request(url, params);
+    return await this.request(params);
   }
 
-  private async request(url: string, endpoint: string) {
-    const uri = `${url}${endpoint}`;
+  private async request(endpoint: string) {
+    const uri = `${this.url}${endpoint}`;
     try {
       const result = await Vue.axios.get(uri).then((response) => {
         return response.data;
@@ -41,12 +41,12 @@ export class Api {
 
 interface ApiOptions {
   onError: (e: ApiError) => void | Promise<void>;
-  uriSearch: string;
+  url: string;
 }
 
 const ApiPlugin: PluginObject<ApiOptions> = {
   install: (Vue: any, options?: ApiOptions) => {
-    Vue.$api = Vue.prototype.$api = new Api(options?.onError);
+    Vue.$api = Vue.prototype.$api = new Api(options?.url, options?.onError);
   },
 };
 
