@@ -126,4 +126,12 @@ export default class MemberDetail extends Vue {
 #profile:hover {
   filter: saturate(2);
 }
+
+@media screen and (max-width: 500px) {
+  .card-items {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+  }
+}
 </style>

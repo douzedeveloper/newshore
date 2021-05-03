@@ -7,50 +7,42 @@
       elevation="8"
     >
       <v-carousel
-        cycle
-        interval="3000"
         show-arrows-on-hover
         progress-color="#ffc500"
+        cycle
+        interval="3000"
         hide-delimiters
-        class="item-caro"
       >
-        <div class="engloba" style="color: red">
-          <v-carousel-item v-for="(item, i) in items" :key="i">
-            <div class="chip-house">
-              <v-chip
-                class="ma-2"
-                color="grey darken-3"
-                text-color="white"
-                light
-              >
-                <v-avatar left>
-                  <v-icon>mdi-wizard-hat</v-icon>
-                </v-avatar>
-                <span class="house-name mt-2">
-                  {{ item.members }}
-                  {{ item.members &lt; 2 ? "wizard" : "wizard's" }}
-                </span>
-              </v-chip>
-            </div>
+        <v-carousel-item v-for="(item, i) in items" :key="i">
+          <div class="chip-house">
+            <v-chip class="ma-2" color="grey darken-3" text-color="white" light>
+              <v-avatar left>
+                <v-icon>mdi-wizard-hat</v-icon>
+              </v-avatar>
+              <span class="house-name mt-2">
+                {{ item.members }}
+                {{ item.members &lt; 2 ? "wizard" : "wizard's" }}
+              </span>
+            </v-chip>
+          </div>
 
-            <div class="image-house">
-              <a :href="'/house/' + item.house">
-                <v-img
-                  v-bind:src="item.src"
-                  width="200"
-                  height="230"
-                  :href="'/house/' + item.house"
-                />
-              </a>
-            </div>
-
-            <a :href="'/house/' + item.house" style="color: white">
-              <div class="stripe-house">
-                <v-icon class="icon-house" large> mdi-deathly-hallows</v-icon>
-              </div>
+          <div class="image-house">
+            <a :href="'/house/' + item.house">
+              <v-img
+                v-bind:src="item.src"
+                width="200"
+                height="230"
+                :href="'/house/' + item.house"
+              />
             </a>
-          </v-carousel-item>
-        </div>
+          </div>
+
+          <a :href="'/house/' + item.house" style="color: white">
+            <div class="stripe-house">
+              <v-icon class="icon-house" large> mdi-deathly-hallows</v-icon>
+            </div>
+          </a>
+        </v-carousel-item>
       </v-carousel>
     </v-card>
   </div>
