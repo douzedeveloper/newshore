@@ -105,5 +105,12 @@ export default class Dialog extends Vue implements DialogOptions {
       height: calc(var(--height) - 3.6rem);
     }
   }
+
+  @media screen and (max-width: 500px) {
+    .dialog-frame {
+      height: 80%;
+      width: 70%;
+    }
+  }
 }
 </style>

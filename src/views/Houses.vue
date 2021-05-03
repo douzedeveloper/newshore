@@ -33,4 +33,16 @@ export default class Houses extends Vue {}
   align-self: center;
   width: 70%;
 }
+
+@media screen and (max-width: 800px) {
+  .carousel {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .carousel {
+    width: 100%;
+  }
+}
 </style>
